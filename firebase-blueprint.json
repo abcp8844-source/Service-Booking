@@ -1,0 +1,24 @@
+{
+  "collections": [
+    {
+      "name": "bookings",
+      "rules": [
+        {
+          "allow": "read",
+          "condition": "request.auth != null",
+          "description": "Authenticated owners can view bookings"
+        },
+        {
+          "allow": "create",
+          "condition": "true",
+          "description": "Anyone can create a booking"
+        },
+        {
+          "allow": "update, delete",
+          "condition": "request.auth != null",
+          "description": "Authenticated owners can update or delete bookings"
+        }
+      ]
+    }
+  ]
+}
