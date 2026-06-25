@@ -84,8 +84,9 @@ export default function OwnerPortal() {
   const handleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Login failed:', error);
+      alert('Login failed: ' + error.message + '\n\nIf you deployed to Vercel, make sure to add your Vercel domain to Firebase Console -> Authentication -> Settings -> Authorized domains.');
     }
   };
 
