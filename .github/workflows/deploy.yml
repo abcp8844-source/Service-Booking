@@ -11,9 +11,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 1. خودکار: ضروری کنفیگریشن فائلیں بنانا
+      - name: Create Firebase Config Files
+        run: |
+          echo '{"hosting":{"public":"dist","ignore":["firebase.json","**/.*","**/node_modules/**"],"rewrites":[{"source":"**","destination":"/index.html"}]}}' > firebase.json
+          echo '{"projects":{"default":"service-booking-42387"}}' > .firebaserc
+
+      # 2. خودکار: انسٹالیشن
       - name: Install dependencies
         run: npm install
 
+      # 3. خودکار: بلڈ (Environment Variables کے ساتھ)
       - name: Build Application
         run: npm run build
         env:
@@ -25,6 +33,7 @@ jobs:
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
           VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
 
+      # 4. خودکار: فائر بیس پر ڈپلائے
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
