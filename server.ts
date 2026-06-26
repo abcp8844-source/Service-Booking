@@ -24,16 +24,16 @@ async function startServer() {
   });
 
   // Gemini "High Thinking" Search Route
-  app.post('/api/ai/suggest-category', async (req, res) => {
+    app.post('/api/ai/suggest-category', async (req, res) => {
     try {
-      const { query } = req.body;
+      const { query, lang } = req.body;
       if (!query) {
         return res.status(400).json({ error: 'Query is required' });
       }
 
       const response = await ai.models.generateContent({
         model: "gemini-3.1-pro-preview",
-        contents: `Based on the user's service request: "${query}", suggest the best matching service category name from our database. Output JSON.`,
+        contents: `Based on the user's service request: "${query}", suggest the best matching service category name from our database. Respond with reasoning translated into the language code: "${lang || 'en'}". The categoryName must remain in English so it matches our system logic. Output JSON.`,
         config: {
           thinkingConfig: { thinkingLevel: ThinkingLevel.HIGH },
           responseMimeType: "application/json",

@@ -86,7 +86,12 @@ export default function OwnerPortal() {
       await signInWithPopup(auth, googleProvider);
     } catch (error: any) {
       console.error('Login failed:', error);
-      alert('Login failed: ' + error.message + '\n\nIf you deployed to Vercel, make sure to add your Vercel domain to Firebase Console -> Authentication -> Settings -> Authorized domains.');
+      if (error.code === 'auth/unauthorized-domain') {
+        const currentDomain = window.location.hostname;
+        alert(`Login failed: Unauthorized Domain.\n\nTo fix this, please go to your Firebase Console:\n1. Go to Authentication -> Settings -> Authorized domains\n2. Add the following domain:\n\n${currentDomain}\n\nMake sure to also add your Vercel domain if you are deploying there.`);
+      } else {
+        alert('Login failed: ' + error.message);
+      }
     }
   };
 

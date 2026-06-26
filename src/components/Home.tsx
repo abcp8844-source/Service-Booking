@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { calculateDistance } from '../utils/distance';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
+import AIAssistantModal from './AIAssistantModal';
 
 interface Provider {
   id: string;
@@ -28,6 +29,7 @@ export default function Home() {
   
   const [customLocation, setCustomLocation] = useState('');
   const [locError, setLocError] = useState('');
+  const [showAiModal, setShowAiModal] = useState(false);
   const [providers, setProviders] = useState<Provider[]>([]);
   const [loadingProviders, setLoadingProviders] = useState(false);
 
@@ -208,24 +210,40 @@ export default function Home() {
         
         {step === 'categories' && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="pt-6 pb-8 text-center max-w-2xl mx-auto">
+            <div className="pt-6 pb-8 text-center max-w-2xl mx-auto flex flex-col items-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-4 leading-tight">
                 {t('where_need').replace('{{category}}', '')}
               </h2>
+              
+              <div className="flex flex-col items-center gap-3 mb-4">
+                <button 
+                  onClick={() => setShowAiModal(true)}
+                  className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:from-blue-600 hover:via-indigo-600 hover:to-purple-600 text-white rounded-full px-6 py-3 font-bold flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <Sparkles className="w-5 h-5" />
+                  <span>{t('ask_ai', 'Ask AI')}</span>
+                </button>
+                <p className="text-sm font-medium text-purple-600 bg-purple-50 px-3 py-1 rounded-full">
+                  This is about the AI
+                </p>
+              </div>
+
               <p className="text-lg text-gray-500 font-medium">
-                {t('find_professionals')}
+                Will find professional near this location.
               </p>
             </div>
 
-            <div className="relative max-w-2xl mx-auto mb-10">
-              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" />
-              <input 
-                type="text" 
-                placeholder={t('select_service')} 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white border-2 border-gray-100 rounded-2xl py-4.5 pl-14 pr-4 text-lg font-medium focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 shadow-sm transition-all"
-              />
+            <div className="relative max-w-2xl mx-auto mb-10 flex gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" />
+                <input 
+                  type="text" 
+                  placeholder={t('select_service')} 
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full bg-white border-2 border-gray-100 rounded-2xl py-4.5 pl-14 pr-4 text-lg font-medium focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 shadow-sm transition-all"
+                />
+              </div>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
@@ -454,6 +472,12 @@ export default function Home() {
           </div>
         )}
       </main>
+
+      <AIAssistantModal 
+        isOpen={showAiModal} 
+        onClose={() => setShowAiModal(false)} 
+        onSelectCategory={handleCategorySelect}
+      />
     </div>
   );
 }
