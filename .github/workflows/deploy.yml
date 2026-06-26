@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create Firebase Config Files
-        run: |
-          echo '{"hosting":{"public":"dist","ignore":["firebase.json","**/.*","**/node_modules/**"],"rewrites":[{"source":"**","destination":"/index.html"}]}}' > firebase.json
-          echo '{"projects":{"default":"service-booking-42387"}}' > .firebaserc
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
@@ -35,4 +35,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
           projectId: 'service-booking-42387'
-          force: true
+          channelId: 'live'
