@@ -1,35 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- ہوم پیج -->
   <url>
     <loc>https://service-booking-42387.firebaseapp.com/</loc>
-    <lastmod>2026-06-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- اونر پورٹل -->
   <url>
     <loc>https://service-booking-42387.firebaseapp.com/owner</loc>
-    <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://service-booking-42387.firebaseapp.com/category/salon</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://service-booking-42387.firebaseapp.com/category/mechanic</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://service-booking-42387.firebaseapp.com/category/plumber</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://service-booking-42387.firebaseapp.com/category/electrician</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- 52 کیٹیگریز کے لنکس -->
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/salon-beauty</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/mechanic</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/clinic-medical</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/plumbing</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/electrical</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/cleaning-services</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/pest-control</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/tutoring</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/fitness-training</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/photography</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/catering</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/moving-storage</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/painting</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/landscaping</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/hvac-services</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/carpentry</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/roofing</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/locksmith</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/appliance-repair</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/legal-services</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/it-support</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/web-design</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/accounting</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/pet-care</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/event-planning</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/real-estate</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/tailoring</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/massage-therapy</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/makeup-artist</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/tattoo-piercing</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/car-wash</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/towing-service</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/child-care</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/elderly-care</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/pool-maintenance</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/snow-removal</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/tree-service</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/window-cleaning</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/flooring</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/fencing</loc></url>
+  <url><loc>https://service-booking-42387.png/category/masonry</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/drywall</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/glazier</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/security-systems</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/upholstery</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/welding</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/waste-removal</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/videography</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/dj-services</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/interior-design</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/personal-chef</loc></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/bicycle-repair</loc></url>
 </urlset>
