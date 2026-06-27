@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Shield, FileText, PhoneCall, Mail, MapPin, Sparkles } from 'lucide-react';
+import { Shield, FileText, Sparkles, Mail, MessageSquare } from 'lucide-react';
 
 export default function AboutPage() {
   const { t } = useTranslation();
@@ -9,109 +9,63 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 md:px-6 py-10">
         
-        {/* Header Hero */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 px-4 py-2 rounded-full mb-4 shadow-sm animate-bounce">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 px-4 py-2 rounded-full mb-4 shadow-sm">
             <Sparkles className="w-5 h-5 text-indigo-500" />
-            <span className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              {t('about', 'About Gemini Booking')}
+            <span className="text-sm font-bold text-indigo-600">
+              {t('about', 'Corporate Identity')}
             </span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
             {t('about_title', 'Terms, Privacy & Support')}
           </h1>
-          <p className="text-lg text-gray-500 font-medium mt-3 max-w-2xl mx-auto">
-            {t('about_subtitle', 'We connect you with high-quality professionals in your area using smart location features.')}
-          </p>
         </div>
 
-        {/* Bento Grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          {/* Section: Terms of Service */}
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-all flex flex-col">
-            <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
-              <FileText className="w-6 h-6" />
-            </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-              {t('terms_service', 'Terms of Service')}
-            </h2>
-            <div className="text-gray-600 text-sm leading-relaxed space-y-3.5 flex-1">
-              <p className="font-semibold text-gray-800">1. {t('tos_1_title', 'Platform Services')}</p>
-              <p>{t('tos_1_desc', 'Our platform acts as an intermediate channel connecting service seekers with local business providers. Bookings made are directly negotiated between user and provider.')}</p>
-              
-              <p className="font-semibold text-gray-800">2. {t('tos_2_title', 'Accuracy of Listings')}</p>
-              <p>{t('tos_2_desc', 'Providers are solely responsible for updating their accurate shop details, primary services, and current location metrics.')}</p>
-
-              <p className="font-semibold text-gray-800">3. {t('tos_3_title', 'Fair Usage')}</p>
-              <p>{t('tos_3_desc', 'Please respect appointments and cancel in advance if you cannot arrive. Repeated empty bookings may result in platform restrictions.')}</p>
-            </div>
+          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col">
+            <FileText className="w-8 h-8 text-blue-600 mb-6" />
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('about_us', 'About Us')}</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We founded this platform with a vision to integrate technology with human convenience. We exist to simplify your access to skilled professionals, acting as a digital bridge that ensures quality and trust. We are not just an application; we are a responsible institution that values your time and strives to build a system where every user and service provider feels secure and satisfied.
+            </p>
           </div>
 
-          {/* Section: Privacy Policy */}
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-all flex flex-col">
-            <div className="w-12 h-12 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
-              <Shield className="w-6 h-6" />
-            </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-              {t('privacy_policy', 'Privacy Policy')}
-            </h2>
-            <div className="text-gray-600 text-sm leading-relaxed space-y-3.5 flex-1">
-              <p className="font-semibold text-gray-800">1. {t('priv_1_title', 'Location Data')}</p>
-              <p>{t('priv_1_desc', 'We access your live geolocation coordinates only with your explicit permission to suggest the nearest service providers. We do not track or save your continuous location history.')}</p>
+          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col">
+            <Shield className="w-8 h-8 text-purple-600 mb-6" />
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('terms_of_service', 'Terms of Service')}</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Our platform functions as a digital directory and facilitator. While we are not directly responsible for the personal actions of users or providers, we maintain rigorous standards. We reserve the right to blacklist accounts involved in fraudulent activity or repeated booking cancellations. Your appointments are private agreements, with our role dedicated strictly to professional facilitation.
+            </p>
+          </div>
 
-              <p className="font-semibold text-gray-800">2. {t('priv_2_title', 'Booking Information')}</p>
-              <p>{t('priv_2_desc', 'We securely process customer names, telephone numbers, and appointment schedule records in Firebase database. This is visible only to the specific provider you book.')}</p>
-
-              <p className="font-semibold text-gray-800">3. {t('priv_3_title', 'Data Retention')}</p>
-              <p>{t('priv_3_desc', 'You can request to delete your historical bookings and business listings anytime by contacting our team.')}</p>
-            </div>
+          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col md:col-span-2">
+            <Shield className="w-8 h-8 text-emerald-600 mb-6" />
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('privacy_policy', 'Privacy Policy')}</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Your trust is our most valuable asset. We utilize the world-class security infrastructure of Google Firebase to ensure your data remains protected. We guarantee total transparency: your information is used exclusively to facilitate your bookings. Access to your personal data is restricted, even from our internal teams, ensuring that your privacy is maintained through Google's advanced technology and your explicit consent.
+            </p>
           </div>
         </div>
 
-        {/* Contact Us Full-Width Card */}
-        <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white rounded-3xl shadow-xl mt-8 p-8 md:p-10 relative overflow-hidden">
-          <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-10 translate-y-10 scale-150">
-            <PhoneCall className="w-96 h-96" />
-          </div>
-          
-          <div className="relative z-10">
-            <h2 className="text-3xl font-extrabold mb-4">{t('contact_us', 'Need Assistance? Contact Us')}</h2>
-            <p className="text-indigo-100 max-w-xl font-medium text-base mb-8">
-              {t('contact_desc', 'Whether you are a customer searching for services, or a business owner experiencing setup difficulties, we are here to support you round-the-clock.')}
-            </p>
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-3xl shadow-xl mt-8 p-8 md:p-12 text-center">
+          <h2 className="text-3xl font-extrabold mb-4">{t('contact_us', 'Contact & Support')}</h2>
+          <p className="text-blue-100 max-w-lg mx-auto mb-8 font-medium">
+            We are dedicated to providing you with an exceptional experience. Should you require any assistance, our professional team is here to support you with care and efficiency.
+          </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 hover:bg-white/15 transition-all">
-                <Mail className="w-6 h-6 text-indigo-200 shrink-0" />
-                <div>
-                  <p className="text-xs text-indigo-200 font-bold uppercase tracking-wider">{t('email', 'Email')}</p>
-                  <a href="mailto:support@service-booking.com" className="text-sm font-semibold hover:underline">
-                    support@booking.com
-                  </a>
-                </div>
-              </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:abcp8844@gmail.com" 
+               className="flex items-center justify-center gap-2 bg-white text-blue-700 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition-all shadow-lg">
+              <Mail className="w-5 h-5" />
+              {t('admin_support', 'Admin Support')}
+            </a>
 
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 hover:bg-white/15 transition-all">
-                <PhoneCall className="w-6 h-6 text-indigo-200 shrink-0" />
-                <div>
-                  <p className="text-xs text-indigo-200 font-bold uppercase tracking-wider">{t('phone', 'Phone Support')}</p>
-                  <a href="tel:+1234567890" className="text-sm font-semibold hover:underline">
-                    +1 (234) 567-890
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 hover:bg-white/15 transition-all">
-                <MapPin className="w-6 h-6 text-indigo-200 shrink-0" />
-                <div>
-                  <p className="text-xs text-indigo-200 font-bold uppercase tracking-wider">{t('location', 'Global HQ')}</p>
-                  <p className="text-sm font-semibold">
-                    Silicon Valley, California
-                  </p>
-                </div>
-              </div>
-            </div>
+            <a href="https://wa.me/message/H4KM5YQEOMITE1" target="_blank" rel="noopener noreferrer"
+               className="flex items-center justify-center gap-2 bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all">
+              <MessageSquare className="w-5 h-5" />
+              {t('emergency_support', 'Emergency Support')}
+            </a>
           </div>
         </div>
 
