@@ -1,68 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- ہوم پیج -->
   <url>
     <loc>https://service-booking-42387.firebaseapp.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- اونر پورٹل -->
   <url>
     <loc>https://service-booking-42387.firebaseapp.com/owner</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-  <!-- 52 کیٹیگریز کے لنکس -->
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/salon-beauty</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/mechanic</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/clinic-medical</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/plumbing</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/electrical</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/cleaning-services</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/pest-control</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/tutoring</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/fitness-training</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/photography</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/catering</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/moving-storage</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/painting</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/landscaping</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/hvac-services</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/carpentry</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/roofing</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/locksmith</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/appliance-repair</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/legal-services</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/it-support</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/web-design</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/accounting</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/pet-care</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/event-planning</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/real-estate</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/tailoring</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/massage-therapy</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/makeup-artist</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/tattoo-piercing</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/car-wash</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/towing-service</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/child-care</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/elderly-care</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/pool-maintenance</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/snow-removal</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/tree-service</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/window-cleaning</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/flooring</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/fencing</loc></url>
-  <url><loc>https://service-booking-42387.png/category/masonry</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/drywall</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/glazier</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/security-systems</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/upholstery</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/welding</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/waste-removal</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/videography</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/dj-services</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/interior-design</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/personal-chef</loc></url>
-  <url><loc>https://service-booking-42387.firebaseapp.com/category/bicycle-repair</loc></url>
+  <url>
+    <loc>https://service-booking-42387.firebaseapp.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/salon-beauty</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/mechanic</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/clinic-medical</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/plumbing</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/electrical</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/cleaning-services</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/pest-control</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/tutoring</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/fitness-training</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/photography</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/catering</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/moving-storage</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/painting</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/landscaping</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/hvac-services</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/carpentry</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/roofing</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/locksmith</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/appliance-repair</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/legal-services</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/it-support</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/web-design</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/accounting</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/pet-care</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/event-planning</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/real-estate</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/tailoring</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/massage-therapy</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/makeup-artist</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/tattoo-piercing</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/car-wash</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/towing-service</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/child-care</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/elderly-care</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/pool-maintenance</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/snow-removal</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/tree-service</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/window-cleaning</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/flooring</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/fencing</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/masonry</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/drywall</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/glazier</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/security-systems</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/upholstery</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/welding</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/waste-removal</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/videography</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/dj-services</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/interior-design</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/personal-chef</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://service-booking-42387.firebaseapp.com/category/bicycle-repair</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
+
+import os
+import json
+import re
+import requests
+from google import genai
+import firebase_admin
+from firebase_admin import credentials, firestore
+import urllib.parse
+
+service_account_info = json.loads(os.environ.get("FIREBASE_SERVICE_ACCOUNT"))
+cred = credentials.Certificate(service_account_info)
+firebase_admin.initialize_app(cred)
+db = firestore.client()
+
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+PEXELS_API_KEY = "5fkJHUN3D6bw2TV09HEiAHUHQJETwkSbPdIsCeCYXQGkYohfeU66VdW0"
+
+def get_pexels_image(keyword):
+    headers = {"Authorization": PEXELS_API_KEY}
+    # اب یہ یہاں صرف وہی کی-ورڈ لے گا جو ہم اسے بھیجیں گے، کوئی ایکسٹرا ورڈ نہیں
+    url = f"https://api.pexels.com/v1/search?query={urllib.parse.quote(keyword)}&per_page=1"
+    try:
+        response = requests.get(url, headers=headers).json()
+        if 'photos' in response and len(response['photos']) > 0:
+            return response['photos'][0]['src']['large']
+    except:
+        pass
+    return "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
+
+def process_posts():
+    docs = db.collection('raw_jobs').where(filter=firestore.FieldFilter('status', '==', 'pending')).order_by('created_at', direction=firestore.Query.DESCENDING).limit(1).get()
+    
+    for doc in docs:
+        data = doc.to_dict()
+        for key, value in data.items():
+            if hasattr(value, 'isoformat'):
+                data[key] = value.isoformat()
+        
+        prompt = f"""
+        Analyze the following raw data: {json.dumps(data)}.
+        
+        Task: 
+        1. Create a professional, SEO-friendly Title. 
+        2. Write a direct, agency-style content (250 words).
+        3. Extract: 'contact_number', 'contact_email', 'apply_link'.
+        4. Classify as: 'jobs', 'visa', or 'travel'.
+        
+        INSTRUCTIONS:
+        - Output ONLY valid JSON: {{title, content, contact_number, contact_email, apply_link, category}}.
+        - Title: [Category] in [Country] [Year] - [Role]. (Use year from raw data). NO 'Opportunities', NO 'Guide'.
+        - Content: Write like a recruitment agency. Focus on benefits and requirements. NO filler words.
+        - Forbidden Words: 'opportunities', 'verified', 'guide', 'professional', 'strategy', 'emerging', 'transformation'.
+        """
+        
+        try:
+            response = client.models.generate_content(model='gemini-3.1-flash-lite', contents=prompt)
+            clean_text = response.text.replace('```json', '').replace('```', '').strip()
+            content_json = json.loads(clean_text)
+            
+            # یہاں اب تصویر کا سرچ کی-ورڈ صرف کیٹیگری اور ٹائٹل پر مشتمل ہے
+            image_query = f"{content_json.get('category')} {content_json.get('title')}"
+            final_image_url = get_pexels_image(image_query)
+            
+            db.collection('published_posts').add({
+                'title': content_json['title'],
+                'content': content_json['content'],
+                'image_url': final_image_url,
+                'contact_number': content_json.get('contact_number'),
+                'contact_email': content_json.get('contact_email'),
+                'apply_link': content_json.get('apply_link'),
+                'category': content_json.get('category', 'jobs'),
+                'created_at': firestore.SERVER_TIMESTAMP
+            })
+            
+            db.collection('raw_jobs').document(doc.id).update({'status': 'success'})
+            break
+            
+        except Exception as e:
+            print(f"Error: {e}")
+
+if __name__ == "__main__":
+    process_posts()
