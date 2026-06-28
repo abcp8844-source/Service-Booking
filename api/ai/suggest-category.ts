@@ -1,45 +1,50 @@
-import { GoogleGenAI, ThinkingLevel, Type } from '@google/genai';
+import { GoogleGenAI } from '@google/genai';
+import { initializeApp, cert } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
 
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY,
-  httpOptions: {
-    headers: {
-      'User-Agent': 'aistudio-build',
-    }
-  }
-});
+// Firebase کا کنکشن (اپنی JSON کی فائل کا پاتھ دیں)
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+if (!getApps().length) {
+  initializeApp({ credential: cert(serviceAccount) });
+}
+const db = getFirestore();
+
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' });
-  }
+  if (req.method !== 'POST') return res.status(405).end();
+
+  const { query, userLocation } = req.body;
 
   try {
-    const { query } = req.body;
-    if (!query) {
-      return res.status(400).json({ error: 'Query is required' });
-    }
+    // 1. Firebase سے کیٹیگری کا ڈیٹا نکالیں
+    const shopsRef = db.collection('shops');
+    const snapshot = await shopsRef.where('category', '==', query.toLowerCase()).get();
+    
+    let shopsData = [];
+    snapshot.forEach(doc => shopsData.push(doc.data()));
 
+    // 2. Gemini کو ڈیٹا اور لوکیشن کے ساتھ بھیجیں
     const response = await ai.models.generateContent({
-      model: "gemini-3.1-pro-preview",
-      contents: `Based on the user's service request: "${query}", suggest the best matching service category name from our database. Output JSON.`,
-      config: {
-        thinkingConfig: { thinkingLevel: ThinkingLevel.HIGH },
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            categoryName: { type: Type.STRING },
-            confidence: { type: Type.NUMBER },
-            reasoning: { type: Type.STRING }
-          },
-          required: ["categoryName", "confidence", "reasoning"]
-        }
-      }
+      model: "gemini-1.5-pro",
+      contents: `
+        You are the Booking Service Assistant.
+        Available Shops for user: ${JSON.stringify(shopsData)}
+        User Location: ${JSON.stringify(userLocation)}
+        
+        Rules:
+        - Analyze shops based on distance. Suggest the nearest ones.
+        - Provide Shop Name, Distance, and their Booking Link.
+        - If shops are far, inform the user clearly.
+        - If user asks for login/bugs, direct them to 'Contact Us' page.
+        - Tone: Helpful, Urdu/Native language, Professional.
+        - If query is unrelated, politely stay within the Booking Service scope.
+      `,
+      config: { responseMimeType: "application/json" }
     });
+
     res.status(200).json(JSON.parse(response.text));
   } catch (error) {
-    console.error("AI suggestion error:", error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ reply: "Our booking system is currently busy. For emergency support, please visit our 'Contact Us' page." });
   }
 }
