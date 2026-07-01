@@ -1,40 +1,38 @@
 import { GoogleGenAI } from '@google/genai';
-// ... باقی امپورٹس وہی رہیں گی
+import { getFirestore } from 'firebase-admin/firestore';
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const db = getFirestore();
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
+  
   const { query } = req.body;
 
   try {
-    // 1. ڈیٹا بیس سے کچھ شاپس کا ڈیٹا لائیں
     const snapshot = await db.collection('shops').limit(10).get();
     let shopsData = snapshot.docs.map(doc => doc.data());
 
-    // 2. جدید ماڈل کا استعمال کریں (gemini-2.0-flash)
-    const model = ai.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = ai.getGenerativeModel({ model: "gemini-3.1-flash-lite" });
 
     const prompt = `
-      You are 'Zunex Booking Assistant', a friendly, energetic, and helpful human-like assistant.
-      Here is the available shop data: ${JSON.stringify(shopsData)}
-      
-      User's query: "${query}"
+      You are 'Zunex Booking Assistant'.
+      Shop Data: ${JSON.stringify(shopsData)}
+      User Query: "${query}"
       
       Instructions:
-      - Talk to the user like a friend. Be conversational and helpful.
-      - If they ask for a service, find it from the shop list provided.
-      - If you don't have exactly what they asked, suggest the closest alternative from the list.
+      - Be friendly, energetic, and conversational.
+      - Use provided shop data for service suggestions.
+      - If no exact match, suggest alternatives.
       - Use emojis! Be fun! 😊
-      - DO NOT just say 'Contact Us' unless they are really angry or report a technical bug.
-      - If they just say 'Hi', keep the conversation going by asking: "What service can I help you book today?"
+      - Only suggest 'Contact Us' if the user reports a bug.
+      - If greeting, ask: "What service can I help you book today?"
     `;
 
     const result = await model.generateContent(prompt);
     res.status(200).json({ reply: result.response.text() });
 
   } catch (error) {
-    // اب یہاں بھی اسے دوستانہ رکھیں
-    res.status(200).json({ reply: "I'm still here! I had a small hiccup. What service were we talking about? 🛠️" });
+    res.status(200).json({ reply: "I'm still here! Let's try again—what service do you need help with? 🛠️" });
   }
 }
